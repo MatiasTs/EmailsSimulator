@@ -75,3 +75,8 @@ form{
     background-color: #30975F;
 }
 
+.noValido{
+    margin-top: 30px;
+    color: red;
+    font-size: 18px;
+}

@@ -1,9 +1,10 @@
-let inputsList = document.querySelectorAll("#formulario > input, #formulario > textarea");
+import borrar from "./modulos/borrar.js";
+import enviar from "./modulos/enviar.js"
 
+const btnEnviar = document.getElementById("enviar");
 const resetButton = document.getElementById("resetear");
 
-resetButton.addEventListener("click", () => {
-    inputsList.forEach(element => {
-        element.value = "";
-    });
-})
+btnEnviar.addEventListener("click", enviar);
+
+resetButton.addEventListener("click", borrar);
+
