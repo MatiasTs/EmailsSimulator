@@ -8,11 +8,22 @@ const enviarFunction = (event) => {
     
     let comprobar = condicion(email, "email");
     if(comprobar){
-        comprobar = condicion(asunto, "asunto");
-        if(comprobar){
+        console.log(email.value);
 
-            condicion(mensaje, "mensaje");
+        const expReg = /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/
+        const validarEmail = expReg.test(email.value);
+        if (validarEmail){
+            borrarTexto();
+            comprobar = condicion(asunto, "asunto");
+            if(comprobar){
+                condicion(mensaje, "mensaje");
+            }
+        }else{
+            noValido.textContent = "El email no es válido";
         }
+
+
+        
     }
 
     event.preventDefault();
